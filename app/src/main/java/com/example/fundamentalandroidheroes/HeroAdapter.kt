@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.fundamentalandroidheroes.model.Hero
 
 class HeroAdapter internal constructor(private val context: Context) : BaseAdapter() {
-    public var heroes = arrayListOf<Hero>()
+    var heroes = arrayListOf<Hero>()
 
     override fun getCount(): Int = heroes.size
 
@@ -31,15 +31,15 @@ class HeroAdapter internal constructor(private val context: Context) : BaseAdapt
         return itemView
     }
 
-    private inner class ViewHolder internal constructor(view: View) {
+    private inner class ViewHolder(view: View) {
         private val name: TextView = view.findViewById(R.id.name)
         private val detail: TextView = view.findViewById(R.id.detail)
         private val image: ImageView = view.findViewById(R.id.image)
 
-        internal fun bind(hero: Hero) {
+        fun bind(hero: Hero) {
             name.text = hero.name
             detail.text = hero.detail
-            image.setImageResource(R.drawable.ahmad_dahlan)
+            image.setImageResource(hero.image)
         }
     }
 }

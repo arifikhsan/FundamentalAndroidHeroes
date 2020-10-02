@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun prepare() {
         name = resources.getStringArray(R.array.hero_names)
         detail = resources.getStringArray(R.array.hero_details)
-        image = resources.obtainTypedArray(R.array.hero_details)
+        image = resources.obtainTypedArray(R.array.hero_images)
     }
 
     private fun addItem() {
